@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = [
+    {
+      slug: 'betterhelp-australia-review',
+      title: 'BetterHelp Australia 2025 — Full Honest Review',
+      description: 'Everything you need to know about BetterHelp in Australia: pricing, how it works, therapist quality, and whether it\'s actually worth it.',
+      category: 'Mental Health',
+      date: 'April 26, 2025',
+      affiliateLink: 'https://partners.betterhelp.com/go/referral/carevues'
+    },
+    {
+      slug: 'best-online-therapy-australia',
+      title: 'Best Online Therapy Platforms in Australia (2025 Ranking)',
+      description: 'We ranked the top 7 online therapy platforms available in Australia — BetterHelp, Talkspace, and 5 others — by price, quality, and features.',
+      category: 'Mental Health',
+      date: 'April 26, 2025',
+      affiliateLink: 'https://partners.betterhelp.com/go/referral/carevues'
+    },
+    {
+      slug: 'betterhelp-cost-australia',
+      title: 'How Much Does BetterHelp Cost in Australia? (2025 Pricing)',
+      description: 'A complete breakdown of BetterHelp\'s Australian pricing — weekly costs, plan differences, available discounts, and how it compares to in-person therapy.',
+      category: 'Mental Health',
+      date: 'April 26, 2025',
+      affiliateLink: 'https://partners.betterhelp.com/go/referral/carevues'
+    }
+  ];
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Carevues</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article>
+    <div class="container article-body">
+      <header class="article-header">
+        <span class="category">{post.category}</span>
+        <h1>{post.title}</h1>
+        <p class="description">{post.description}</p>
+      </header>
+
+      <div class="article-content">
+        <slot />
+      </div>
+
+      <div class="cta-box">
+        <strong>Ready to get started?</strong><br />
+        BetterHelp matches you with a licensed Australian therapist within 48 hours.<br />
+        <a href={post.affiliateLink}>Get matched today →</a>
+      </div>
+
+      <div class="affiliate-disclosure" id="affiliate-disclosure">
+        <strong>Affiliate disclosure:</strong> Carevues.com.au is an affiliate partner of BetterHelp. We may earn a commission when you sign up through links on this page — at no extra cost to you. We only recommend products and services we genuinely believe in.
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="container">
+      <p>Carevues.com.au — Honest health and wellness reviews for Australians.</p>
+    </div>
+  </footer>
+</Layout>

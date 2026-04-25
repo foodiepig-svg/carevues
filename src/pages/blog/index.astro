@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: "BetterHelp Australia 2025 — Full Honest Review",
+    description: "Everything you need to know about BetterHelp in Australia: pricing, how it works, therapist quality, and whether it's actually worth it.",
+    category: "Mental Health",
+    date: "April 26, 2025",
+    slug: "betterhelp-australia-review"
+  },
+  {
+    title: "Best Online Therapy Platforms in Australia (2025 Ranking)",
+    description: "We ranked the top 7 online therapy platforms available in Australia — BetterHelp, Talkspace, and 5 others — by price, quality, and features.",
+    category: "Mental Health",
+    date: "April 26, 2025",
+    slug: "best-online-therapy-australia"
+  },
+  {
+    title: "How Much Does BetterHelp Cost in Australia? (2025 Pricing)",
+    description: "A complete breakdown of BetterHelp's Australian pricing — weekly costs, plan differences, available discounts, and how it compares to in-person therapy.",
+    category: "Mental Health",
+    date: "April 26, 2025",
+    slug: "betterhelp-cost-australia"
+  }
+];
+---
+
+<Layout>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Carevues</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Health & Wellness Reviews</h1>
+      <p>Honest, in-depth reviews of the mental health apps, sleep tech, and wellness products that actually work for Australians.</p>
+    </div>
+  </section>
+
+  <section class="articles-section">
+    <div class="container">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="article-card">
+          <p class="category">{post.category}</p>
+          <h2>{post.title}</h2>
+          <p>{post.description}</p>
+          <p class="meta">{post.date}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Carevues.com.au — Honest health and wellness reviews for Australians.</p>
+      <p style="margin-top: 0.5rem;">We may earn a commission from qualifying purchases. <a href="/about#affiliate-disclosure">Our affiliate disclosure →</a></p>
+    </div>
+  </footer>
+</Layout>
