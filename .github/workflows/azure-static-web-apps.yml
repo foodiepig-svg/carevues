@@ -28,3 +28,4 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_SW_TOKEN }}
           app_location: "/"
           output_location: "/dist"
+          app_artifact_location: "dist"
