@@ -3,17 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout>
-  <nav>
-    <div class="container">
-      <a href="/" class="logo">Carevues</a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog" class="active">Blog</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <article>
     <div class="container article-body">
       <header class="article-header">
@@ -21,6 +10,13 @@ import Layout from '../../layouts/Layout.astro';
         <h1>BetterHelp Australia 2025 — Full Honest Review</h1>
         <p class="description">Everything you need to know about BetterHelp in Australia: pricing, how it works, therapist quality, and whether it's actually worth it.</p>
       </header>
+
+      <img
+        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&h=630&fit=crop&auto=format"
+        alt="Person in a comfortable home setting having a video therapy session"
+        class="article-hero-image"
+        loading="lazy"
+      />
 
       <div class="article-content">
         <h2>What Is BetterHelp?</h2>
@@ -54,8 +50,9 @@ import Layout from '../../layouts/Layout.astro';
         <p><em>Prices are in AUD and depend on your therapist and plan. Discounts are often available for first-time users.</em></p>
 
         <div class="cta-box">
-          <strong>Affiliate link:</strong> Start BetterHelp today and save — carevues.com.au readers get a special discount<br />
-          <a href="https://partners.betterhelp.com/go/referral/carevues">Get matched with a BetterHelp therapist →</a>
+          <strong>Ready to start?</strong><br />
+          Get matched with a BetterHelp therapist today<br />
+          <a href="https://partners.betterhelp.com/go/referral/carevues">👉 Get matched with BetterHelp →</a>
         </div>
 
         <h2>Is BetterHelp Available in Australia?</h2>
@@ -70,7 +67,7 @@ import Layout from '../../layouts/Layout.astro';
             <tr><td>Australian therapists</td><td>✓</td><td>✓</td><td>✓</td></tr>
             <tr><td>Unlimited messaging</td><td>✓</td><td>Partial</td><td>✓</td></tr>
             <tr><td>Video sessions</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Recurring commission</td><td>40%</td><td>30%</td><td>—</td></tr>
+            <tr><td>Affiliate program</td><td>40% recurring</td><td>30%</td><td>—</td></tr>
           </tbody>
         </table>
 
@@ -100,7 +97,7 @@ import Layout from '../../layouts/Layout.astro';
         <div class="cta-box">
           <strong>Ready to start?</strong><br />
           Get matched with a BetterHelp therapist today<br />
-          <a href="https://partners.betterhelp.com/go/referral/carevues">👉 Get matched →</a>
+          <a href="https://partners.betterhelp.com/go/referral/carevues">👉 Get matched with BetterHelp →</a>
         </div>
       </div>
 
@@ -109,10 +106,4 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </article>
-
-  <footer>
-    <div class="container">
-      <p>Carevues.com.au — Honest health and wellness reviews for Australians.</p>
-    </div>
-  </footer>
 </Layout>

@@ -3,17 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout>
-  <nav>
-    <div class="container">
-      <a href="/" class="logo">Carevues</a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog" class="active">Blog</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <article>
     <div class="container article-body">
       <header class="article-header">
@@ -21,6 +10,13 @@ import Layout from '../../layouts/Layout.astro';
         <h1>Best Online Therapy Platforms in Australia (2025 Ranking)</h1>
         <p class="description">We ranked the top 7 online therapy platforms available in Australia — BetterHelp, Talkspace, and 5 others — by price, quality, and features.</p>
       </header>
+
+      <img
+        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=630&fit=crop&auto=format"
+        alt="Smartphone displaying a mental wellness app alongside a cup of tea"
+        class="article-hero-image"
+        loading="lazy"
+      />
 
       <div class="article-content">
         <h2>Why Australians Are Turning to Online Therapy</h2>
@@ -37,7 +33,7 @@ import Layout from '../../layouts/Layout.astro';
         <p><strong>Cons:</strong> Premium pricing at the higher tiers; No Medicare or health fund rebates</p>
         <p><strong>Starting from:</strong> ~$60 AUD/week</p>
         <div class="cta-box">
-          <a href="https://partners.betterhelp.com/go/referral/carevues">Start with BetterHelp →</a>
+          <a href="https://partners.betterhelp.com/go/referral/carevues">👉 Start with BetterHelp →</a>
         </div>
 
         <h3>2. Talkspace — Best Value for Text-Based Therapy</h3>
@@ -98,10 +94,4 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </article>
-
-  <footer>
-    <div class="container">
-      <p>Carevues.com.au — Honest health and wellness reviews for Australians.</p>
-    </div>
-  </footer>
 </Layout>

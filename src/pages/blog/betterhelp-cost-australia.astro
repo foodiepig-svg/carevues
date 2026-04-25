@@ -3,17 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout>
-  <nav>
-    <div class="container">
-      <a href="/" class="logo">Carevues</a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog" class="active">Blog</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <article>
     <div class="container article-body">
       <header class="article-header">
@@ -21,6 +10,13 @@ import Layout from '../../layouts/Layout.astro';
         <h1>How Much Does BetterHelp Cost in Australia? (2025 Pricing)</h1>
         <p class="description">A complete breakdown of BetterHelp's Australian pricing — weekly costs, plan differences, available discounts, and how it compares to in-person therapy.</p>
       </header>
+
+      <img
+        src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop&auto=format"
+        alt="Person reviewing information on a laptop with a calm, focused expression"
+        class="article-hero-image"
+        loading="lazy"
+      />
 
       <div class="article-content">
         <h2>Straightforward Pricing — No Hidden Fees</h2>
@@ -109,10 +105,4 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </article>
-
-  <footer>
-    <div class="container">
-      <p>Carevues.com.au — Honest health and wellness reviews for Australians.</p>
-    </div>
-  </footer>
 </Layout>
