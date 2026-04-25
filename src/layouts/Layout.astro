@@ -376,6 +376,124 @@
     margin-bottom: 2rem;
   }
 
+  /* Problem Section */
+  .problem-section {
+    padding: 4rem 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .problem-heading {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .stat-desc em {
+    display: block;
+    margin-top: 0.3rem;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    opacity: 0.8;
+  }
+
+  .problem-body {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
+
+  /* Solution Section */
+  .solution-section {
+    padding: 4rem 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .solution-body {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
+
+  /* Coverage Section */
+  .coverage-section {
+    padding: 4rem 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .coverage-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .coverage-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .coverage-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #111827;
+  }
+
+  .coverage-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
   /* Responsive */
   @media (max-width: 600px) {
     .hero h1 { font-size: 1.8rem; }
@@ -383,5 +501,8 @@
     nav ul { gap: 1rem; }
     .article-header h1 { font-size: 1.5rem; }
     nav .logo-link img { height: 32px; }
+    .problem-heading { font-size: 1.3rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: 1fr; }
   }
 </style>
