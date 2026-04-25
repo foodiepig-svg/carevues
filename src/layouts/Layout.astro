@@ -7,7 +7,7 @@
     <title>Carevues — Mental Health & Sleep Reviews for Australians</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
   </head>
   <body>
@@ -43,8 +43,8 @@
     --color-text: #1F2937;
     --color-text-muted: #6B7280;
     --color-border: #E5E7EB;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'DM Serif Display', Georgia, serif;
     --max-width: 720px;
   }
 
@@ -132,22 +132,25 @@
 
   /* Hero */
   .hero {
-    background: var(--color-surface);
-    padding: 4rem 0;
+    background: #FAFAFA;
+    background-image: radial-gradient(ellipse at top, #F0F4FF 0%, #FAFAFA 60%);
+    padding: 5rem 0 4rem;
     text-align: center;
     border-bottom: 1px solid var(--color-border);
   }
 
   .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
   }
 
   .hero p {
     color: var(--color-text-muted);
-    font-size: 1.1rem;
-    max-width: 480px;
-    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
   }
 
   .hero .cta-button {
