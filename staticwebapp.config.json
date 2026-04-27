@@ -1,13 +1,1 @@
-{
-  "routes": [],
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/images/*"]
-  },
-  "globalHeaders": {
-    "X-Content-Type-Options": "nosniff"
-  },
-  "mimeTypes": {
-    ".json": "application/json"
-  }
-}
+{"routes": []}
