@@ -3,6 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 
 const posts = [
   {
+    title: "How to Prepare for Your First BetterHelp Session — A Practical Guide",
+    description: "First BetterHelp session coming up? Here's how to prepare — practical tips on tech, what to expect, and how to get the most out of your first therapy appointment.",
+    category: "Mental Health",
+    date: "April 27, 2025",
+    slug: "how-to-prepare-for-first-betterhelp-session"
+  },
+  {
     title: "BetterHelp Australia 2025 — Full Honest Review",
     description: "Everything you need to know about BetterHelp in Australia: pricing, how it works, therapist quality, and whether it's actually worth it.",
     category: "Mental Health",
@@ -31,26 +38,249 @@ const posts = [
     slug: "betterhelp-vs-talkspace"
   }
 ];
+
+const [featured, ...rest] = posts;
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+}
 ---
 
 <Layout>
-  <section class="hero">
+  <section class="hero" style="padding: 3rem 0 2rem;">
     <div class="container">
-      <h1>Health & Wellness Reviews</h1>
-      <p>Honest, in-depth reviews of the mental health apps, sleep tech, and wellness products that actually work for Australians.</p>
+      <h1>Blog</h1>
+      <p>Honest reviews of mental health platforms, sleep tech, and wellness products for Australians.</p>
     </div>
   </section>
 
+  {/* Featured Article — magazine hero layout */}
+  {featured && (
+    <section class="featured-section">
+      <div class="container">
+        <div class="featured-grid">
+          <a href={`/blog/${featured.slug}`} class="featured-main">
+            <div class="featured-badge">Featured</div>
+            <div class="featured-content">
+              <span class="category">{featured.category}</span>
+              <h2>{featured.title}</h2>
+              <p>{featured.description}</p>
+              <div class="meta">
+                <span class="author">Carevues</span>
+                <span class="sep">·</span>
+                <time>{formatDate(featured.date)}</time>
+              </div>
+            </div>
+          </a>
+          <div class="featured-sidebar">
+            <h3 class="sidebar-label">Latest</h3>
+            {rest.map(post => (
+              <a href={`/blog/${post.slug}`} class="sidebar-item">
+                <span class="category-small">{post.category}</span>
+                <span class="sidebar-title">{post.title}</span>
+                <time class="sidebar-date">{formatDate(post.date)}</time>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* All articles grid */}
   <section class="articles-section">
     <div class="container">
-      {posts.map(post => (
-        <a href={`/blog/${post.slug}`} class="article-card">
-          <p class="category">{post.category}</p>
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          <p class="meta">{post.date}</p>
-        </a>
-      ))}
+      <h3 class="section-label">All Reviews</h3>
+      <div class="articles-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="article-card">
+            <span class="category">{post.category}</span>
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+            <div class="meta">
+              <time>{formatDate(post.date)}</time>
+              <span class="read-more">Read Review →</span>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Featured section — magazine layout */
+  .featured-section { padding: 2.5rem 0; border-bottom: 1px solid var(--color-border); }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    align-items: start;
+  }
+  .featured-main {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .featured-main:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    border-color: var(--color-primary);
+    text-decoration: none;
+  }
+  .featured-badge {
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.85rem;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 1.5rem 1.5rem 0;
+  }
+  .featured-content { padding: 1rem 1.5rem 1.75rem; }
+  .featured-content .category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .featured-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.85rem;
+    color: #111827;
+  }
+  .featured-content p { color: #4B5563; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem; }
+  .featured-content .meta { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #9CA3AF; }
+  .featured-content .meta .author { color: #6B7280; font-weight: 500; }
+  .featured-content .meta .sep { color: #D1D5DB; }
+
+  /* Sidebar */
+  .featured-sidebar {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .sidebar-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #F3F4F6;
+    text-decoration: none;
+    color: inherit;
+  }
+  .sidebar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .sidebar-item:hover { text-decoration: none; }
+  .sidebar-item:hover .sidebar-title { color: var(--color-primary); }
+  .category-small {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-primary);
+  }
+  .sidebar-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111827;
+    transition: color 0.15s;
+  }
+  .sidebar-date { font-size: 0.75rem; color: #9CA3AF; margin-top: 0.1rem; }
+
+  /* Articles grid */
+  .articles-section { padding: 2.5rem 0 4rem; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .article-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,.07);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .article-card .category {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  .article-card h2 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+  .article-card p { color: #4B5563; font-size: 0.875rem; line-height: 1.6; flex: 1; margin-bottom: 1rem; }
+  .article-card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #9CA3AF;
+    margin-top: auto;
+  }
+  .read-more { color: var(--color-primary); font-weight: 600; font-size: 0.82rem; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-sidebar { display: none; }
+    .featured-content h2 { font-size: 1.4rem; }
+    .articles-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero { padding: 2rem 0; }
+    .featured-content h2 { font-size: 1.25rem; }
+  }
+</style>
