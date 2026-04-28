@@ -164,7 +164,7 @@ const resources = [
   },
   {
     name: "Sleepio",
-    category: "apps",
+    category: "sleep",
     description: "Clinically-proven digital sleep improvement program. 6-week course backed by research.",
     cost: "Free (AU residents)",
     url: "https://www.sleepio.com/",
@@ -172,6 +172,127 @@ const resources = [
     note: "Evidence-based",
     au: true,
     affiliate: false,
+  },
+  {
+    name: "Reclaim",
+    category: "sleep",
+    description: "AI-powered sleep tracker that learns your patterns. Auto-logs naps, snoring, and interruptions.",
+    cost: "Free / ~$8/mo",
+    url: "https://www.reclaim.ai/",
+    cta: "Track Sleep",
+    note: "Integrates with calendar",
+    au: true,
+    affiliate: false,
+  },
+  {
+    name: "BetterSleep",
+    category: "sleep",
+    description: "Sleep sounds, bedtime stories, and relaxation exercises. Formerly known as Relax Melodies.",
+    cost: "Free / ~$50/yr",
+    url: "https://www.bettersleep.com/",
+    cta: "Fall Asleep Faster",
+    note: "100+ soundscapes",
+    au: true,
+    affiliate: true,
+  },
+  {
+    name: "Sleep Cycle",
+    category: "sleep",
+    description: "Alarm clock that analyses sleep quality and wakes you in your lightest sleep phase.",
+    cost: "Free / ~$50/yr",
+    url: "https://www.sleepcycle.com/",
+    cta: "Wake Refreshed",
+    note: "iOS & Android",
+    au: true,
+    affiliate: false,
+  },
+  {
+    name: "Oura Ring",
+    category: "sleep",
+    description: "Ring-based wearable tracking sleep stages, resting heart rate, and recovery scores.",
+    cost: "~$300 + membership",
+    url: "https://payhip.com/b/XXXXX", // needs affiliate link
+    cta: "Explore Oura",
+    note: "No watch required",
+    au: true,
+    affiliate: true,
+  },
+  {
+    name: "Whoop",
+    category: "sleep",
+    description: "Recovery and sleep strain tracker used by athletes. Measures HRV, respiratory rate, and sleep debt.",
+    cost: "~$30/mo",
+    url: "https://www.whoop.com/",
+    cta: "Try Whoop",
+    note: "30-day free trial",
+    au: true,
+    affiliate: true,
+  },
+  {
+    name: "Withings Sleep Tracking Mat",
+    category: "sleep",
+    description: "Slips under your mattress to track sleep stages, snoring, and breathing disturbances without a wearable.",
+    cost: "~$149",
+    url: "https://www.withings.com/",
+    cta: "Shop Sleep Mat",
+    note: "No wearable needed",
+    au: true,
+    affiliate: false,
+  },
+  {
+    name: "Emma Sleep",
+    category: "sleep",
+    description: "Online mattress retailer with strong AU delivery. Sleep trials and free returns on all mattresses.",
+    cost: "From ~$299",
+    url: "https://www.emmasleep.com.au/",
+    cta: "View Mattresses",
+    note: "100-night trial",
+    au: true,
+    affiliate: true,
+  },
+  {
+    name: "Snoozeblind",
+    category: "sleep",
+    description: "Specialist sleep mask blocking 100% of light. Memory foam, breathable fabric — popular for shift workers.",
+    cost: "From ~$35",
+    url: "https://snoozeblind.com/",
+    cta: "Shop Masks",
+    note: "AU shipping",
+    au: true,
+    affiliate: false,
+  },
+  {
+    name: "Melatonin (BioCeuticals)",
+    category: "sleep",
+    description: "Practitioner-grade melatonin supplements available in AU. 1mg–5mg doses for sleep onset support.",
+    cost: "From ~$15",
+    url: "https://www.bioceuticals.com.au/",
+    cta: "Explore Melatonin",
+    note: "Requires practitioner script",
+    au: true,
+    affiliate: false,
+  },
+  {
+    name: "Blackmores REM Sleep",
+    category: "sleep",
+    description: "Herbal sleep formula with valerian, passionflower, and melatonin. Available at AU pharmacies.",
+    cost: "From ~$22",
+    url: "https://www.blackmores.com.au/",
+    cta: "Shop Blackmores",
+    note: "In-store & online",
+    au: true,
+    affiliate: true,
+  },
+  {
+    name: "Eight Sleep",
+    category: "sleep",
+    description: "Smart mattress with temperature control, sleep tracking, and auto-adjusting firmness. Premium tier.",
+    cost: "From ~$2,495",
+    url: "https://www.eightsleep.com/",
+    cta: "Explore Eight Sleep",
+    note: "Referral email bounced",
+    au: false,
+    affiliate: true,
   },
 
   // Free / Low-cost
@@ -237,6 +358,7 @@ const filters = [
   { id: "crisis", label: "Crisis Support" },
   { id: "therapy", label: "Therapy" },
   { id: "apps", label: "Apps" },
+  { id: "sleep", label: "Sleep" },
   { id: "free", label: "Free / Low-Cost" },
 ];
 
@@ -244,6 +366,7 @@ const categoryColors = {
   crisis: "#DC2626",
   therapy: "#4F46E5",
   apps: "#059669",
+  sleep: "#7C3AED",
   free: "#D97706",
 };
 ---
@@ -254,8 +377,8 @@ const categoryColors = {
     <div class="hero">
       <div class="container">
         <span class="section-label">Resources</span>
-        <h1>AU Mental Health Directory</h1>
-        <p>A curated, honest guide to mental health and wellbeing resources available to Australians — from free crisis support to paid therapy platforms. Filter by what you need right now.</p>
+        <h1>AU Mental Health & Sleep Directory</h1>
+        <p>A curated, honest guide to mental health and sleep resources available to Australians — from free crisis support to sleep supplements, apps, and wearables. Filter by what you need right now.</p>
       </div>
     </div>
 
@@ -287,6 +410,7 @@ const categoryColors = {
                   {r.category === "crisis" ? "Crisis" :
                    r.category === "therapy" ? "Therapy" :
                    r.category === "apps" ? "App" :
+                   r.category === "sleep" ? "Sleep" :
                    "Free"}
                 </span>
                 {r.au && <span class="au-tag">🇦🇺 AU</span>}
@@ -432,6 +556,10 @@ const categoryColors = {
 
   .resource-card[data-category="apps"] {
     border-left: 3px solid #059669;
+  }
+
+  .resource-card[data-category="sleep"] {
+    border-left: 3px solid #7C3AED;
   }
 
   .resource-card[data-category="free"] {
