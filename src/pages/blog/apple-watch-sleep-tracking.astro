@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout>
+  <article>
+    <div class="container article-body">
+      <header class="article-header">
+        <span class="category">Sleep Tech</span>
+        <h1>Apple Watch Sleep Tracking: What It Actually Measures and What It Doesn't</h1>
+        <p class="description">Apple Watch tracks your sleep every night — but what do those numbers really mean? An honest look at what Apple's sleep data tells you and where it falls short.</p>
+      </header>
+
+      <img
+        src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=1200&h=630&fit=crop&auto=format"
+        alt="Apple Watch on a bedside table showing sleep tracking data"
+        class="article-hero-image"
+        loading="lazy"
+      />
+
+      <div class="article-content">
+        <h2>What Apple Watch Actually Tracks When You Sleep</h2>
+        <p>Since watchOS 17, Apple Watch has offered sleep stages — breaking your night down into <strong>Core Sleep</strong>, <strong>Deep Sleep</strong>, and <strong>REM</strong>. Before that, it only showed time asleep and time awake. Here's what's actually being measured:</p>
+        <ul>
+          <li><strong>Time asleep</strong> — the total duration you were asleep (versus awake in bed)</li>
+          <li><strong>Sleep stages</strong> — Core, Deep, and REM, estimated from movement and heart rate patterns</li>
+          <li><strong>Heart rate</strong> — tracked continuously via the optical sensor</li>
+          <li><strong>HRV (Heart Rate Variability)</strong> — measured overnight, shown each morning</li>
+          <li><strong>Respiratory rate</strong> — breathing frequency per minute, estimated from chest movement</li>
+        </ul>
+        <p>Apple uses a combination of the accelerometer (movement), the optical heart rate sensor, and an algorithm to estimate these values. No EEG. No chest strap. Just wrist-based sensors and machine learning.</p>
+
+        <h2>How It Compares to Dedicated Sleep Trackers</h2>
+        <p>If you're serious about sleep data, here's how Apple Watch stacks up against the main alternatives:</p>
+
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>Apple Watch</th><th>Oura Ring</th><th>Whoop 4.0</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sleep stages</td><td>Yes (Core, Deep, REM)</td><td>Yes (Light, Deep, REM)</td><td>Yes (Light, Deep, REM)</td></tr>
+            <tr><td>HRV</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Respiratory rate</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Battery life</td><td>~18 hours (charge daily)</td><td>~7 days</td><td>~5 days</td></tr>
+            <tr><td>Clinical accuracy</td><td>Not clinically validated</td><td>Not clinically validated</td><td>Closest to clinical</td></tr>
+          </tbody>
+        </table>
+
+        <p>Whoop generally has the most accurate sleep staging of the three, based on physiological metrics rather than motion. Oura is the most comfortable to wear to bed (no screen, lightweight ring). Apple Watch is the most convenient if you already wear it — but the daily charging requirement means many people take it off at night.</p>
+
+        <h2>What Apple Watch Sleep Tracking Gets Right</h2>
+        <p>Despite the limitations of wrist-based sensing, Apple Watch sleep tracking has some genuine strengths:</p>
+
+        <h3>1. It's Better Than Nothing</h3>
+        <p>If you weren't tracking your sleep at all, Apple Watch introduces you to your baseline. Most people are surprised to learn they sleep less than they think — or that their sleep is more fragmented than they realised.</p>
+
+        <h3>2. The Trends Are Useful</h3>
+        <p>A single night's sleep data isn't very meaningful. But Apple Health's trend view over weeks and months shows you patterns: You sleep 90 minutes less on nights you stay up past 11pm. Your deep sleep drops when you drink alcohol. These patterns are genuinely actionable.</p>
+
+        <h3>3. HRV Tracking Is Valuable</h3>
+        <p>Apple's overnight HRV measurement is one of the most useful outputs from sleep tracking. It gives you a daily nervous system readout — useful for understanding recovery, especially when correlated with training load or stress. <a href="/blog/hrv-meaning-sleep">We cover HRV in depth here.</a></p>
+
+        <h3>4. Integration With Apple Health</h3>
+        <p>Apple Health pulls sleep data from Apple Watch and combines it with activity, heart rate, and respiratory data. If you're in the Apple ecosystem, this unified view is genuinely powerful for seeing how your lifestyle affects your sleep.</p>
+
+        <h2>Where Apple Watch Sleep Tracking Falls Short</h2>
+        <p>Being honest about limitations is important — wrist-based sleep tracking has real constraints:</p>
+
+        <h3>1. Sleep Stage Accuracy Is Estimated, Not Measured</h3>
+        <p>Without EEG (brain wave measurement), no wearable can accurately determine sleep stages. Apple estimates sleep stages from movement and heart rate patterns — it's educated guessing, not clinical measurement. Studies on consumer wearables show accuracy rates of 60–70% compared to polysomnography (sleep lab EEG). That's useful for trends, but don't treat your Apple Watch deep sleep number as gospel.</p>
+
+        <h3>2. It Can't Detect Sleep Apnoea</h3>
+        <p>Apple Watch cannot diagnose sleep apnoea — despite using respiratory rate data. Clinical-grade sleep apnoea detection requires a proper sleep study. If you suspect sleep apnoea (snoring, gasping, morning headaches, daytime exhaustion), see your GP.</p>
+
+        <h3>3. The Daily Charge Requirement Is a Problem</h3>
+        <p>Apple Watch typically needs charging each day — and many people charge it while they sleep to use it as an alarm. That means it's not on your wrist during the night, and you lose all sleep data. Apple's new sleep API in watchOS 20 may improve this, but for now, if you're charging overnight, you're not tracking sleep.</p>
+
+        <h3>4. It Doesn't Measure Sleep Quality Directly</h3>
+        <p>Time asleep and sleep stages are proxies for sleep quality — but not the same thing. Two people can sleep 7 hours with identical stage distributions and feel completely different. How you feel is still the most important metric.</p>
+
+        <h2>How to Get the Most From Apple Watch Sleep Data</h2>
+        <p>If you're going to use Apple Watch for sleep tracking, here's how to make it worthwhile:</p>
+        <ul>
+          <li><strong>Wear it consistently.</strong> One night of tracking tells you nothing. Four weeks of data starts to show real patterns.</li>
+          <li><strong>Charge it before bed, not during.</strong> If you use it as an alarm, charge it for 30–45 minutes before bed rather than overnight.</li>
+          <li><strong>Look at 7–14 day trends, not daily numbers.</strong> Your Apple Watch will show you a trend graph in the Health app — this is more useful than any single night's data.</li>
+          <li><strong>Correlate with lifestyle.</strong> Note when you drink alcohol, train hard, sleep in a hot room, or have a stressful day. Over time, you'll see what affects your sleep.</li>
+          <li><strong>Use the HRV trend specifically.</strong> HRV is one of the more reliable metrics from wrist-based tracking and is useful for understanding recovery.</li>
+        </ul>
+
+        <h2>Should You Rely on Apple Watch Sleep Data?</h2>
+        <p>Apple Watch sleep tracking is a useful introduction to your sleep patterns — but it's not a medical device and shouldn't be treated as one. Use it to identify broad trends and patterns, not precise clinical data.</p>
+        <p>If your Apple Watch consistently shows poor sleep, disrupted stages, or unusually low HRV, that's a signal to look at your sleep habits — not a diagnosis. Consider speaking to a doctor if you're concerned.</p>
+        <p>For Australians looking for comprehensive sleep support — including access to sleep coaches and therapists who can help with sleep anxiety and insomnia — BetterHelp is a practical starting point.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Does Apple Watch have accurate sleep tracking?</h3>
+        <p>Apple Watch sleep tracking is reasonably accurate for time asleep vs awake, but sleep stage accuracy is estimated at 60–70% compared to clinical polysomnography. It's useful for trends, not precise measurement.</p>
+
+        <h3>Can Apple Watch detect sleep apnoea?</h3>
+        <p>No. Apple Watch cannot diagnose sleep apnoea. If you have symptoms (snoring, gasping, morning headaches, daytime exhaustion), see your GP for a proper sleep study.</p>
+
+        <h3>What is Core sleep on Apple Watch?</h3>
+        <p>Core sleep is Apple's term for light sleep — the largest portion of your nightly sleep, including lighter NREM stages. Deep sleep and REM make up the remaining stages. Apple separates these into three tiers in watchOS 17+.</p>
+
+        <h3>How do I see my sleep data on iPhone?</h3>
+        <p>Open the <strong>Health app</strong> → <strong>Sleep</strong> → scroll down to see your sleep history, average time asleep, and sleep stage breakdowns. The <strong>Show More Trends</strong> option gives you the 7 and 30-day views.</p>
+
+        <h3>Should I wear my Apple Watch every night to track sleep?</h3>
+        <p>If your Apple Watch battery lasts the day and you don't need to charge it overnight, yes — wearing it nightly gives you the most complete data. If you need to charge it overnight, consider a 30-minute top-up before bed rather than losing all sleep data.</p>
+
+      </div>
+
+      <div class="cta-box">
+        <strong>Sleep issues affecting your energy and recovery?</strong><br />
+        BetterHelp connects you with a therapist who can help with insomnia, sleep anxiety, and recovery.<br />
+        <a href="https://partners.betterhelp.com/go/referral/carevues">Get matched with a therapist today →</a>
+      </div>
+
+      <div class="affiliate-disclosure">
+        <strong>Affiliate disclosure:</strong> Carevues.com.au is an affiliate partner of BetterHelp. We may earn a commission when you sign up through links on this page — at no extra cost to you. We only recommend products and services we genuinely believe in.
+      </div>
+    </div>
+  </article>
+</Layout>
